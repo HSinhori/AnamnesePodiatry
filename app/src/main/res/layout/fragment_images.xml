@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ImagesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_patient_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textAlignment="center"
+            android:text="@string/monitoring_patient"
+            android:textSize="28sp"
+            android:textColor="@color/colorPrimary"/>
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/img_pacient_img"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="3dp"
+            app:civ_shadow="false" />
+
+        <ImageView
+            android:id="@+id/turn_images"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/turn"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <GridView
+            android:id="@+id/grid_patient_images"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:padding="5dp"
+            android:horizontalSpacing="5dp"
+            android:background="@drawable/edittext_custom"
+            android:columnWidth="90dp"
+            android:numColumns="3">
+
+        </GridView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:orientation="vertical"
+        app:layout_dodgeInsetEdges="bottom">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSaveImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/fab_margin"
+            app:backgroundTint="@color/colorPrimary"
+            android:tint="@color/cardview_light_background"
+            app:maxImageSize="35dp"
+            app:srcCompat="@android:drawable/ic_menu_save"
+            android:visibility="gone"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/cardview_light_background"
+            app:backgroundTint="@color/colorPrimary"
+            app:maxImageSize="45dp"
+            app:srcCompat="@android:drawable/ic_input_add"/>
+
+    </LinearLayout>
+</FrameLayout>

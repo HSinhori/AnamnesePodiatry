@@ -1,0 +1,168 @@
+<resources>
+    <string name="app_name">Anamnesis - Podiatry</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_save_backup">Save Backup to Device</string>
+
+    <string name="menu_client_list">List of Patients</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_logout">Logout</string>
+    <string name="app_exit_message">Press again to exit the application.</string>
+
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="txt_delete_customer">Delete Patient</string>
+    <string name="txt_view_customer">View Patient</string>
+    <string name="txt_client_name">Patient Name</string>
+    <string name="client_name">Patient Name</string>
+    <string name="client_phone">Phone</string>
+    <string name="client_phone_two">Phone 2</string>
+    <string name="client_profession">Profession</string>
+    <string name="client_city">City</string>
+    <string name="client_district">District</string>
+    <string name="client_address">Address</string>
+    <string name="save_new_client">Save New Patient</string>
+    <string name="client_gender">Gender</string>
+    <string name="cant_save">Failed to save new patient, please try again.</string>
+    <string name="saved_succes">New patient successfully saved.</string>
+    <string name="add_new_client">Add New Patient</string>
+    <string name="txt_client_phone">Patient Phone</string>
+    <string name="delete_record">Do you want to delete this patient?</string>
+    <string name="yes">YES</string>
+    <string name="cancel">CANCEL</string>
+    <string name="logo">Logo</string>
+    <string name="client_details">Anamnesis</string>
+    <string name="save_edit_client">Save changes</string>
+    <string name="customer_profile">PROFILE</string>
+    <string name="clinical_data">CLINICAL DATA</string>
+    <string name="diabetes_customer">Diabetes</string>
+    <string name="diabetes_type">Type of diabetes</string>
+    <string name="diabetes_time">Time with diabetes?</string>
+    <string name="allergies_customer">Allergies</string>
+    <string name="whats_allergies">What allergies?</string>
+    <string name="smoking_customer">Smoking</string>
+    <string name="alcoholic_customer">Alcoholic</string>
+    <string name="ophthalmology_customer">Ophthalmology</string>
+    <string name="cardiovascular_customer">Cardiovascular</string>
+    <string name="renal_customer">Renal</string>
+    <string name="clinical_others">Others</string>
+    <string name="clinical_data_tab">Clinical</string>
+    <string name="nail_shape_tab">Nail Shape</string>
+    <string name="dedo_normal">Normal</string>
+    <string name="dedo_incorreto">Incorrect</string>
+    <string name="dedo_involuta">Involute</string>
+    <string name="dedo_telha">Tile</string>
+    <string name="dedo_funil">Funnel</string>
+    <string name="dedo_caracol">Snail</string>
+    <string name="dedo_cunha">Wedge</string>
+    <string name="dedo_gancho">Hook</string>
+    <string name="nail_shape">NAIL SHAPE</string>
+    <string name="perfusion">PODOPATHIES</string>
+    <string name="annotations">ANNOTATIONS</string>
+    <string name="feet">FEET</string>
+    <string name="ulcer">Ulcer</string>
+    <string name="ringworm">Ringworm</string>
+    <string name="keratosis">Keratosis</string>
+    <string name="fissures">Fissures</string>
+    <string name="cwc">Callus with core</string>
+    <string name="cwoc">Callus without core</string>
+    <string name="plant_wart">Plant wart</string>
+    <string name="foot_left">Left</string>
+    <string name="foot_right">Right</string>
+    <string name="calc_tam">Size of footwear</string>
+    <string name="hygiene">Hygiene</string>
+    <string name="suitable">Suitable</string>
+    <string name="refR">Reflexes 1001 1002 R</string>
+    <string name="refB">Reflexes 1001 1002 B</string>
+    <string name="onicocryptosis">Onychocriptosis</string>
+    <string name="onychomycosis">Onychomycosis</string>
+    <string name="wart">Wart</string>
+    <string name="crack">Crack</string>
+    <string name="callus">Callus</string>
+    <string name="sn">Without core</string>
+    <string name="cn">With core</string>
+    <string name="bunion">Bunion</string>
+    <string name="varus">Varus</string>
+    <string name="halux_valgus">Halux Valgus</string>
+    <string name="flat">Flat</string>
+    <string name="cavys">Hollow</string>
+    <string name="plantar">Plantar</string>
+    <string name="hyperhi">Hyperhidrosis</string>
+    <string name="anhidrosis">Anhidrosis</string>
+    <string name="bromidose">Bromhidrosis</string>
+    <string name="swollen">Swollen</string>
+    <string name="fine">Slim</string>
+    <string name="oily">Oily</string>
+    <string name="resected">Resected</string>
+    <string name="cyanotic">Cyanotic</string>
+    <string name="cant_save_changes">Failed to save changes, restart the app and try again.</string>
+    <string name="saved_changes">Changed successfully.</string>
+    <string name="save_new_user" translatable="false">Save user</string>
+    <string name="new_user" translatable="false">New User</string>
+    <string name="loading_info">Loading information of: </string>
+    <string name="gps_not_conf">Google Play Services not configured.</string>
+    <string name="some_permissions">Some permissions may be requested in the future</string>
+    <string name="pacient_details">Patient details</string>
+    <string name="cant_load">Failed to load, restart the app and try again.</string>
+    <string name="saved_new_user" translatable="false">New user saved successfully.</string>
+    <string name="cant_save_new_user">Failed to save new user, please try again.</string>
+    <string name="tutorial" translatable="false">Tutorial</string>
+    <string name="bkp_saved" translatable="false">Backup saved to \"internal storage / Downloads\"</string>
+    <string name="save_new_bkp" translatable="false">Save Backup</string>
+    <string name="action_recover_backup" translatable="false">Recover Backup from Device</string>
+    <string name="recover_bkp" translatable="false">RECOVER BACKUP</string>
+    <string name="save_backup" translatable="false">Backup</string>
+    <string name="recommend">Hello, I would like to recommend you this application.</string>
+    <string name="choose">Choose where to share.</string>
+    <string name="edit_user" translatable="false">Edit Username.</string>
+    <string name="set_new_username" translatable="false">Set new username.</string>
+    <string name="change_username">Change</string>
+    <string name="client_date">Inclusion date:</string>
+    <string name="take_photo">Take Pictures</string>
+    <string name="choose_from_device">Choose from Device</string>
+    <string name="add_photo">Add Photo!</string>
+    <string name="sel_photo">Select Image</string>
+    <string name="monitoring_patient">Monitoring the Patient</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="saved_photo">Image saved successfully.</string>
+    <string name="cant_save_photo">The image cannot be saved.</string>
+    <string name="null_name">The \"name\" field can\'t be empty.</string>
+    <string name="null_phone">The \"phone\" field can\'t be empty.</string>
+    <string name="hands">HANDS</string>
+    <string name="palmar_wart">Palmar wart</string>
+    <string name="pyo_granu">Pyogenic granuloma</string>
+    <string name="image_info">Image description</string>
+    <string name="rate_us">Rate</string>
+    <string name="liking">Are you enjoying the app</string>
+    <string name="hand_left">Left</string>
+    <string name="hand_right">Right</string>
+    <string name="not_forget_save">Don\'t forget to click again to save.</string>
+    <string name="txt_dev_name">Developed by HeEd</string>
+    <string name="delete_image">Delete Image</string>
+    <string name="delete_img">Do you want to delete this image?</string>
+    <string name="access_patient">Access</string>
+    <string name="delete_patient">Delete</string>
+    <string name="notify_off">Turn off notifications</string>
+    <string name="no_images">No images found.</string>
+    <string name="deleted_images">Image deleted.</string>
+    <string name="deleted_patient">Patient deleted.</string>
+    <string name="no_ads" translatable="false">Get Pro Version</string>
+    <string name="product_title" translatable="false">Product Title</string>
+    <string name="product_price" translatable="false">Product Price</string>
+    <string name="product_desc" translatable="false">Product Description</string>
+    <string name="already_pro" translatable="false">You are already \"Pro\"</string>
+    <string name="free_version" translatable="false">Free Version</string>
+    <string name="download_pro_version" translatable="false">download pro version</string>
+    <string name="exported_db" translatable="false">Database successfully exported.</string>
+    <string name="imported_db" translatable="false">Database successfully imported.</string>
+    <string name="import_db" translatable="false">import database</string>
+    <string name="export_db" translatable="false">export database</string>
+    <string name="pro_number_two" translatable="false">In the pro version, click on the import database button to recover the device.</string>
+    <string name="pro_number_one" translatable="false">In the free version, click the export database button to save to the device.</string>
+    <string name="no">NO</string>
+    <string name="load_pdf" translatable="false">Generating PDF...</string>
+    <string name="open_pdf">Open PDF</string>
+</resources>

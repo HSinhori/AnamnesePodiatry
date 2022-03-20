@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Perfusion">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_clinical_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:text="@string/perfusion"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/btn_custom"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/cyanotic"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/cyanotic"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/resected"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/resected"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/oily"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/oily"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/fine"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/fine"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/swollen"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/swollen"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/bromidose"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/bromidose"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/anhidrosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/anhidrosis"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/hyperhi"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/hyperhi"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/plantar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/plantar"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/cavys"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/cavys"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/flat"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/flat"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/halux_valgus"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/halux_valgus"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/varus"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/varus"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/bunion"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/bunion"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/cn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/cn"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/sn"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/sn"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/callus"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/callus"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/crack"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/crack"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/keratosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/keratosis"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/wart"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/wart"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/onychomycosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/onychomycosis"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/onicocryptosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/onicocryptosis"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/ref1001B"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/refB"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+
+                <Switch
+                    android:id="@+id/ref1001R"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="80dp"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/refR"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:enabled="false"
+                    android:theme="@style/SCBSwitch" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditPerf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:maxImageSize="35dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+</FrameLayout>

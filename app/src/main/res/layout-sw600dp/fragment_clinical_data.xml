@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ClinicalData">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_clinical_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:text="@string/clinical_data"
+                android:textSize="45sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <Switch
+                android:id="@+id/switch_diabetes"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/diabetes_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <EditText
+                android:id="@+id/edit_diabetes_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="@string/diabetes_type"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:background="@drawable/edittext_custom" />
+
+            <EditText
+                android:id="@+id/edit_diabetes_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="@string/diabetes_time"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:background="@drawable/edittext_custom" />
+
+            <Switch
+                android:id="@+id/switch_allergies"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/allergies_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <EditText
+                android:id="@+id/edit_customer_allergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:hint="@string/whats_allergies"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:background="@drawable/edittext_custom" />
+
+            <Switch
+                android:id="@+id/switch_smoking"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/smoking_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <Switch
+                android:id="@+id/switch_alcoholic"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/alcoholic_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <Switch
+                android:id="@+id/switch_ophthalmology"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/ophthalmology_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <Switch
+                android:id="@+id/switch_cardiovascular"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/cardiovascular_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <Switch
+                android:id="@+id/switch_renal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/btn_custom"
+                android:text="@string/renal_customer"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"/>
+
+            <EditText
+                android:id="@+id/edit_clinical_others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:textAlignment="center"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:ems="10"
+                android:hint="@string/clinical_others"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:background="@drawable/edittext_custom"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditClinical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:maxImageSize="35dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+</FrameLayout>

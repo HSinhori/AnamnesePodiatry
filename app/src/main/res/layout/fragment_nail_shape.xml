@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NailShape">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txt_clinical_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:text="@string/nail_shape"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <RadioGroup
+                android:id="@+id/rG_nail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rB_normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedonormal"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_normal" />
+
+                <RadioButton
+                    android:id="@+id/rB_incorreto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedoincorreto"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_incorreto" />
+
+                <RadioButton
+                    android:id="@+id/rB_involuta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedoinvoluta"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_involuta" />
+
+                <RadioButton
+                    android:id="@+id/rB_telha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedotelha"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_telha" />
+
+                <RadioButton
+                    android:id="@+id/rB_funil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedofunil"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_funil" />
+
+                <RadioButton
+                    android:id="@+id/rB_caracol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedocaracol"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_caracol" />
+
+                <RadioButton
+                    android:id="@+id/rB_cunha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedocunha"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_cunha" />
+
+                <RadioButton
+                    android:id="@+id/rB_gancho"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="25dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawablePadding="5dp"
+                    android:paddingRight="25dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:enabled="false"
+                    android:drawableLeft="@drawable/dedogancho"
+                    android:background="@drawable/btn_custom"
+                    android:text="@string/dedo_gancho" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditNail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:maxImageSize="35dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+</FrameLayout>

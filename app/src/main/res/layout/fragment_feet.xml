@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Feet">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txt_feet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:text="@string/feet"
+                android:textSize="30sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="2.5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_custom"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleX="-1"
+                        android:src="@mipmap/ic_launcher_foreground" />
+
+                    <TextView
+                        android:id="@+id/txt_foot_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:text="@string/foot_left" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_plant_wart_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/plant_wart" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_cwoc_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/cwoc" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_cwc_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/cwc" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_fissures_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/fissures" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_keratosis_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/keratosis" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_ringworm_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/ringworm" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_ulcer_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/ulcer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="2.5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_custom"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/ic_launcher_foreground" />
+
+                    <TextView
+                        android:id="@+id/txt_foot_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:text="@string/foot_right" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_plant_wart_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/plant_wart" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_cwoc_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/cwoc" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_cwc_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/cwc" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_fissures_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/fissures" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_keratosis_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/keratosis" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_ringworm_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/ringworm" />
+
+                    <Switch
+                        android:id="@+id/switch_feet_ulcer_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_custom"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:enabled="false"
+                        android:theme="@style/SCBSwitch"
+                        android:text="@string/ulcer" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editCalcTam"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:textAlignment="center"
+                android:ems="10"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:background="@drawable/edittext_custom"
+                android:hint="@string/calc_tam"
+                android:inputType="number" />
+
+            <Switch
+                android:id="@+id/switch_suitable"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/btn_custom"
+                android:textSize="20sp"
+                android:text="@string/suitable"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"
+                android:checked="false"/>
+
+            <Switch
+                android:id="@+id/switch_hygiene"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/btn_custom"
+                android:textSize="20sp"
+                android:text="@string/hygiene"
+                android:textColor="@color/colorPrimary"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:enabled="false"
+                android:theme="@style/SCBSwitch"
+                android:checked="false"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabEditFeet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:maxImageSize="35dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+</FrameLayout>

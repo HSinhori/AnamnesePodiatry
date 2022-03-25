@@ -30,7 +30,6 @@ import android.widget.TextView;
 import net.anamneseonline.anamnesepodiatry.R;
 import net.anamneseonline.anamnesepodiatry.controller.AnamnesePodiatryController;
 import net.anamneseonline.anamnesepodiatry.fragments.ClientListFragment;
-import net.anamneseonline.anamnesepodiatry.fragments.ProVersion;
 import net.anamneseonline.anamnesepodiatry.utilAnamnese.UtilAnamnesePodiatry;
 
 public class MainActivity extends AppCompatActivity
@@ -138,6 +137,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         if (item.getItemId() == R.id.action_notify_off) {
             if (item.isChecked()) {
 
@@ -151,7 +151,13 @@ public class MainActivity extends AppCompatActivity
 
             }
             notifySave();
+        }else if(item.getItemId() == R.id.remove_ads){
+
+            Intent telaPrincipal = new Intent(MainActivity.this, AdsRemovalActivity.class);
+            startActivity(telaPrincipal);
+
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -194,9 +200,9 @@ public class MainActivity extends AppCompatActivity
 
             }
 
-        /*} else if (id == R.id.pro_version) {
+        } else if (id == R.id.backup) {
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ProVersion()).commit();*/
+            //fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdsRemoval()).commit();
 
         } else if (id == R.id.nav_logout) {
 

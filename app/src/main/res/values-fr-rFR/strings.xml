@@ -133,4 +133,9 @@
     <string name="cavys">Creux</string>
     <string name="no">NON</string>
     <string name="open_pdf">Ouvrir le PDF</string>
+    <string name="ads_removal">Suppression des publicités</string>
+    <string name="click_ads_removal">Cliquez pour supprimer les publicités</string>
+    <string name="cancelled_purchase">Achat annulé</string>
+    <string name="thx_subs">Merci de vous être abonné, vous m\'aidez donc et désactivez les publicités.</string>
+    <string name="remove_ads_message">Abonnement mensuel, en plus de supprimer les publicités vous allez m\'aider.</string>
 </resources>

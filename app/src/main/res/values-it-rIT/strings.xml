@@ -133,4 +133,9 @@
     <string name="cavys">Cavo</string>
     <string name="no">NO</string>
     <string name="open_pdf">Apri PDF</string>
+    <string name="ads_removal">Rimozione annunci</string>
+    <string name="click_ads_removal">Fare clic per rimuovere gli annunci</string>
+    <string name="cancelled_purchase">Acquisto annullato</string>
+    <string name="thx_subs">Grazie per esserti iscritto, quindi mi stai aiutando e disabilitando gli annunci.</string>
+    <string name="remove_ads_message">Abbonamento mensile, oltre a rimuovere le pubblicità mi aiuterai.</string>
 </resources>

@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/action_notify_off"
-        android:orderInCategory="100"
         android:title="@string/notify_off"
         app:showAsAction="never"
         android:checkable="true"/>
+
+    <item
+        android:id="@+id/remove_ads"
+        android:title="@string/ads_removal"
+        android:icon="@drawable/ic_pro_version"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/backup"
+        android:title="@string/save_backup"
+        android:icon="@drawable/save"
+        app:showAsAction="ifRoom"/>
 
 </menu>

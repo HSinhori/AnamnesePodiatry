@@ -133,4 +133,9 @@
     <string name="cavys">Hueco</string>
     <string name="no">NO</string>
     <string name="open_pdf">Abrir PDF</string>
+    <string name="ads_removal">Eliminación de anuncios</string>
+    <string name="click_ads_removal">Haga clic para eliminar anuncios</string>
+    <string name="cancelled_purchase">Compra cancelada</string>
+    <string name="thx_subs">Gracias por suscribirte, así que me estás ayudando y deshabilitando los anuncios.</string>
+    <string name="remove_ads_message">Suscripción mensual, además de quitar los anuncios me estarás ayudando.</string>
 </resources>

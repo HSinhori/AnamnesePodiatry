@@ -149,13 +149,13 @@
     <string name="no_images">No images found.</string>
     <string name="deleted_images">Image deleted.</string>
     <string name="deleted_patient">Patient deleted.</string>
-    <string name="no_ads" translatable="false">Get Pro Version</string>
+    <string name="remove_ads_message">Monthly subscription, in addition to removing the advertisements you will be helping me.</string>
     <string name="product_title" translatable="false">Product Title</string>
     <string name="product_price" translatable="false">Product Price</string>
     <string name="product_desc" translatable="false">Product Description</string>
     <string name="already_pro" translatable="false">You are already \"Pro\"</string>
     <string name="free_version" translatable="false">Free Version</string>
-    <string name="download_pro_version" translatable="false">download pro version</string>
+    <string name="ads_removal">Ads Removal</string>
     <string name="exported_db" translatable="false">Database successfully exported.</string>
     <string name="imported_db" translatable="false">Database successfully imported.</string>
     <string name="import_db" translatable="false">import database</string>
@@ -165,4 +165,7 @@
     <string name="no">NO</string>
     <string name="load_pdf" translatable="false">Generating PDF...</string>
     <string name="open_pdf">Open PDF</string>
+    <string name="click_ads_removal">Click to remove ads</string>
+    <string name="cancelled_purchase">Cancelled purchase</string>
+    <string name="thx_subs">Thanks for subscribing, so you are helping me and disabling ads.</string>
 </resources>

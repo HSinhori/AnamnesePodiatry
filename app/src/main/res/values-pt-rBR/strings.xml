@@ -133,4 +133,9 @@
     <string name="patient_name">Nome do Paciente</string>
     <string name="no">NÃO</string>
     <string name="open_pdf">Abrir PDF</string>
+    <string name="ads_removal">Remoção de anúncios</string>
+    <string name="click_ads_removal">Clique para remover os anúncios</string>
+    <string name="cancelled_purchase">Compra cancelada</string>
+    <string name="thx_subs">Obrigado por assinar, assim você está me ajudando e desativando as propagandas.</string>
+    <string name="remove_ads_message">Assinatura mensal, além de remover as propagandas você estará me ajudando.</string>
 </resources>

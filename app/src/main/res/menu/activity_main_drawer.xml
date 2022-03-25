@@ -12,10 +12,10 @@
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
             android:title="@string/menu_share" />
-        <!--<item
-            android:id="@+id/pro_version"
-            android:icon="@drawable/pro_version"
-            android:title="@string/no_ads" />-->
+        <item
+            android:id="@+id/backup"
+            android:icon="@drawable/save"
+            android:title="@string/save_backup" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"

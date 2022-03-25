@@ -112,8 +112,6 @@ public class SplashScreen extends AppCompatActivity {
 
     }
 
-
-
     private void handlePurchase(Purchase purchase) {
 
         AcknowledgePurchaseResponseListener acknowledgePurchaseResponseListener = new AcknowledgePurchaseResponseListener() {
@@ -160,10 +158,13 @@ public class SplashScreen extends AppCompatActivity {
 
     void handlePurchases(List<Purchase>  purchases) {
         for(Purchase purchase:purchases) {
+            purchase = null;
             //if item is purchased
             if(ITEM_SKU_SUBSCRIBE_MONTHLY.equals(purchase.getSkus()) && purchase.getPurchaseState() == Purchase.PurchaseState.UNSPECIFIED_STATE)
             {
                 saveSubscribe(false);
+            }else{
+                saveSubscribe(true);
             }
         }
     }
@@ -177,6 +178,8 @@ public class SplashScreen extends AppCompatActivity {
         subscribe.putBoolean(SUBSCRIBE_KEY, save);
 
         subscribe.apply();
+
+        Toast.makeText(getApplicationContext(), save.toString(), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -293,7 +296,7 @@ public class SplashScreen extends AppCompatActivity {
 
                 } else {
 
-                    UtilAnamnesePodiatry.showMensagem(this, getResources().getString(R.string.some_permissions));
+                    //UtilAnamnesePodiatry.showMensagem(this, getResources().getString(R.string.some_permissions));
                     apresentarTelaSplash();
 
                 }

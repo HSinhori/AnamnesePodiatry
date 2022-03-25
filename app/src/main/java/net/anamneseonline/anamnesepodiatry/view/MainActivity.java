@@ -309,4 +309,5 @@ public class MainActivity extends AppCompatActivity
         notifyChk = notifyChkr.getInt("notifyChk", 0);
 
     }
+
 }

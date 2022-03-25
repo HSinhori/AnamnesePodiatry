@@ -75,6 +75,10 @@ public class ClientListFragment extends Fragment {
 
     private InterstitialAd mInterstitialAd, mInterstitialAd_details;
 
+    private Boolean savedSubscribe = false;
+    private static final String PREF_FILE= "MyPref";
+    private static final String SUBSCRIBE_KEY= "subscribe";
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -145,7 +149,9 @@ public class ClientListFragment extends Fragment {
 
                 if(mInterstitialAd != null) {
 
-                    mInterstitialAd.show(requireActivity());
+                    if(!getSubscribe()) {
+                        mInterstitialAd.show(requireActivity());
+                    }
 
                 }
 
@@ -237,7 +243,9 @@ public class ClientListFragment extends Fragment {
 
                                     if(mInterstitialAd_details != null) {
 
-                                        mInterstitialAd_details.show(requireActivity());
+                                        if(!getSubscribe()) {
+                                            mInterstitialAd_details.show(requireActivity());
+                                        }
                                     }
 
                                     fragmentManager.beginTransaction().replace(R.id.content_fragment, new ClientDetails()).commit();
@@ -334,6 +342,16 @@ public class ClientListFragment extends Fragment {
         SharedPreferences.Editor savedIdPrefer = savedIdPref.edit();
         savedIdPrefer.putInt("savedId", idSaved);
         savedIdPrefer.commit();
+
+    }
+
+    private Boolean getSubscribe(){
+
+        SharedPreferences getSubscribeStatus = getActivity().getSharedPreferences(PREF_FILE, 0);
+
+        savedSubscribe = getSubscribeStatus.getBoolean(SUBSCRIBE_KEY, false);
+
+        return savedSubscribe;
 
     }
 }

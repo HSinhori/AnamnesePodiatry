@@ -69,12 +69,6 @@ public class AdsRemovalActivity extends AppCompatActivity {
         startAdsBilling();
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        checkAdsRemoval();
-    }
-
     private void startAdsBilling() {
 
         purchasesUpdatedListener = new PurchasesUpdatedListener() {
@@ -213,8 +207,6 @@ public class AdsRemovalActivity extends AppCompatActivity {
                             purchase.getPurchaseState() == Purchase.PurchaseState.PENDING))
             {
                 saveSubscribe(false);
-                btn_remove_ads.setVisibility(View.VISIBLE);
-                item_status.setText(getString(R.string.remove_ads_message));
                 Toast.makeText(this, "Purchase Status Unknown", Toast.LENGTH_SHORT).show();
             }
         }
@@ -229,6 +221,12 @@ public class AdsRemovalActivity extends AppCompatActivity {
         subscribe.putBoolean(SUBSCRIBE_KEY, save);
 
         subscribe.apply();
+
+        if(save){
+            UtilAnamnesePodiatry.showMensagem(this, getString(R.string.remove_ads_message));
+        }else{
+            UtilAnamnesePodiatry.showMensagem(this, getString(R.string.app_name));
+        }
 
     }
 

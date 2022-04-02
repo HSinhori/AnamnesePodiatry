@@ -28,9 +28,13 @@ public class ClientDetails extends Fragment {
 
     public static int idSaved;
 
-    private int[] icons = new int[]{R.drawable.profile, R.drawable.cdata, R.drawable.nshape,
+    private int[] icons = new int[]{R.drawable.ic_profile, R.drawable.cdata, R.drawable.nshape,
                                         R.drawable.hand_icon, R.drawable.feet, R.drawable.perfusion,
                                         R.drawable.annotation, R.drawable.ic_menu_camera};
+
+    private Boolean savedSubscribe = false;
+    private static final String PREF_FILE= "MyPref";
+    private static final String SUBSCRIBE_KEY= "subscribe";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,9 @@ public class ClientDetails extends Fragment {
         adView = (AdView) view.findViewById(R.id.adViewClientDetails);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+        if(getSubscribe()) {
+            adView.setVisibility(View.GONE);
+        }
 
         return view;
     }
@@ -76,6 +83,16 @@ public class ClientDetails extends Fragment {
 
         SharedPreferences savedIdPref = getActivity().getSharedPreferences("savedId", 0);
         idSaved = savedIdPref.getInt("savedId", 0);
+
+    }
+
+    private Boolean getSubscribe(){
+
+        SharedPreferences getSubscribeStatus = getActivity().getSharedPreferences(PREF_FILE, 0);
+
+        savedSubscribe = getSubscribeStatus.getBoolean(SUBSCRIBE_KEY, false);
+
+        return savedSubscribe;
 
     }
 }

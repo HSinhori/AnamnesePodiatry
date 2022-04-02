@@ -94,7 +94,7 @@ public class AnamnesePodiatryAdapter extends ArrayAdapter<AnamnesePodiatry> impl
             linha.img_pacient_listview.setImageBitmap(bitmap);
             linha.img_pacient_listview.setRotation(img_rotate_costumer*90);
         }else{
-            Drawable imgDraw = ContextCompat.getDrawable(getContext(), R.drawable.profile);
+            Drawable imgDraw = ContextCompat.getDrawable(getContext(), R.drawable.ic_profile);
             linha.img_pacient_listview.setImageDrawable(imgDraw);
         }
         if (anamnese_podiatry.getPhonetwo().equals("")){

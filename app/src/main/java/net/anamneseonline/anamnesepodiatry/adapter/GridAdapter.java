@@ -81,7 +81,7 @@ public class GridAdapter extends BaseAdapter {
             holder.imageView_grid.setImageBitmap(bitmap);
             holder.imageView_grid.setRotation(img_rotate*90);
         }else{
-            Drawable imgDraw = ContextCompat.getDrawable(context, R.drawable.profile);
+            Drawable imgDraw = ContextCompat.getDrawable(context, R.drawable.ic_profile);
             holder.imageView_grid.setImageDrawable(imgDraw);
         }
 

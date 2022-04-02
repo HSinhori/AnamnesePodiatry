@@ -121,7 +121,7 @@
     <string name="hand_left">Esquerda</string>
     <string name="hand_right">Direita</string>
     <string name="not_forget_save">Não se esqueça de clicar novamente para salvar.</string>
-    <string name="txt_dev_name">Desenvolvido por HeEd</string>
+    <string name="txt_dev_name">Desenvolvido por @henrique_sinhori</string>
     <string name="delete_image">Deletar Imagem</string>
     <string name="delete_img">Você deseja excluir essa imagem?</string>
     <string name="access_patient">Acessar</string>
@@ -138,4 +138,6 @@
     <string name="cancelled_purchase">Compra cancelada</string>
     <string name="thx_subs">Obrigado por assinar, assim você está me ajudando e desativando as propagandas.</string>
     <string name="remove_ads_message">Assinatura mensal, além de remover as propagandas você estará me ajudando.</string>
+    <string name="see_ads_removal">Agora você já pode remover os anúncios clicando no botão \"AD\" no canto superior direito do app.</string>
+    <string name="restore_backup">Restaurar backup</string>
 </resources>

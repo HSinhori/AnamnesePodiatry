@@ -89,7 +89,7 @@
     <string name="access_patient">Acceso</string>
     <string name="delete_img">¿Quieres borrar esta imagen?</string>
     <string name="delete_image">Eliminar Imagen</string>
-    <string name="txt_dev_name">Desarrollado por HeEd</string>
+    <string name="txt_dev_name">Desarrollado por @henrique_sinhori</string>
     <string name="not_forget_save">No olvide hacer clic nuevamente para guardar.</string>
     <string name="hand_right">Derecha</string>
     <string name="hand_left">Izquierda</string>
@@ -138,4 +138,6 @@
     <string name="cancelled_purchase">Compra cancelada</string>
     <string name="thx_subs">Gracias por suscribirte, así que me estás ayudando y deshabilitando los anuncios.</string>
     <string name="remove_ads_message">Suscripción mensual, además de quitar los anuncios me estarás ayudando.</string>
+    <string name="see_ads_removal">Ahora puede eliminar los anuncios haciendo clic en el botón \"ANUNCIO\" en la esquina superior derecha de la aplicación.</string>
+    <string name="restore_backup">Restaurar copia de seguridad</string>
 </resources>

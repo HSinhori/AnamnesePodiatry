@@ -33,7 +33,7 @@ public class NailShape extends Fragment {
 
     private int nailshape;
 
-    private boolean fab_customer_profile_check;
+    private boolean fab_customer_profile_check = false;
 
 
     @Override
@@ -67,10 +67,6 @@ public class NailShape extends Fragment {
             @SuppressLint("NonConstantResourceId")
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-
-                //nailshape = radioGroup.getCheckedRadioButtonId();
-                //Toast.makeText(getActivity(), String.valueOf(checkedId), Toast.LENGTH_SHORT).show();
 
                 switch(checkedId){
 
@@ -113,14 +109,12 @@ public class NailShape extends Fragment {
             }
         });
 
-        fab_customer_profile_check = true;
-
         fabEditNail = view.findViewById(R.id.fabEditNail);
         fabEditNail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(fab_customer_profile_check) {
+                if(!fab_customer_profile_check) {
 
                     fabEditNail.setImageResource(android.R.drawable.ic_menu_save);
                     fabEditNail.setColorFilter(Color.WHITE);
@@ -136,7 +130,7 @@ public class NailShape extends Fragment {
 
                     UtilAnamnesePodiatry.showMensagem(getContext(), getString(R.string.not_forget_save));
 
-                    fab_customer_profile_check = false;
+                    fab_customer_profile_check = true;
 
                 }else{
 
@@ -151,8 +145,10 @@ public class NailShape extends Fragment {
 
     private void saveNailShape() {
 
-        fabEditNail.setImageResource(android.R.drawable.ic_menu_edit);
-        fabEditNail.setColorFilter(Color.WHITE);
+        if(fab_customer_profile_check){
+            fabEditNail.setImageResource(android.R.drawable.ic_menu_edit);
+            fabEditNail.setColorFilter(Color.WHITE);
+        }
 
         try {
 
@@ -171,11 +167,9 @@ public class NailShape extends Fragment {
                 rB_cunha.setEnabled(false);
                 rB_gancho.setEnabled(false);
 
-                fab_customer_profile_check = true;
+                fab_customer_profile_check = false;
 
                 UtilAnamnesePodiatry.showMensagem(getContext(), getString(R.string.saved_changes));
-
-                fab_customer_profile_check = true;
 
             }else{
 
@@ -229,29 +223,45 @@ public class NailShape extends Fragment {
 
                 rB_gancho.setChecked(true);
 
-            }else if(anamnesePodiatry.getNailshape() > 7){
+            }else if(anamnesePodiatry.getNailshape() > 7 || anamnesePodiatry.getNailshape() < 0){
 
                 nailshape = anamnesePodiatry.getNailshape();
 
-                ((RadioButton)radioGroup.findViewById(nailshape)).setChecked(true);
+                try {
 
-                if(rB_normal.isChecked()){
+                    ((RadioButton) radioGroup.findViewById(nailshape)).setChecked(true);
+
+                    if (rB_normal.isChecked()) {
+                        nailshape = 0;
+                    } else if (rB_incorreto.isChecked()) {
+                        nailshape = 1;
+                    } else if (rB_involuta.isChecked()) {
+                        nailshape = 2;
+                    } else if (rB_telha.isChecked()) {
+                        nailshape = 3;
+                    } else if (rB_funil.isChecked()) {
+                        nailshape = 4;
+                    } else if (rB_caracol.isChecked()) {
+                        nailshape = 5;
+                    } else if (rB_cunha.isChecked()) {
+                        nailshape = 6;
+                    } else if (rB_gancho.isChecked()) {
+                        nailshape = 7;
+                    }
+
+                }catch (Exception e){
+
+                    rB_normal.setChecked(true);
                     nailshape = 0;
-                }else if(rB_incorreto.isChecked()){
-                    nailshape = 1;
-                }if(rB_involuta.isChecked()){
-                    nailshape = 2;
-                }if(rB_telha.isChecked()){
-                    nailshape = 3;
-                }if(rB_funil.isChecked()){
-                    nailshape = 4;
-                }if(rB_caracol.isChecked()){
-                    nailshape = 5;
-                }if(rB_cunha.isChecked()){
-                    nailshape = 6;
-                }if(rB_gancho.isChecked()){
-                    nailshape = 7;
+
                 }
+
+                saveNailShape();
+
+            }else{
+
+                rB_normal.setChecked(true);
+                nailshape = 0;
 
                 saveNailShape();
 

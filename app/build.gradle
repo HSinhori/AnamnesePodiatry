@@ -6,8 +6,8 @@ android {
         applicationId "net.anamneseonline.anamnesepodiatry"
         minSdkVersion 26
         targetSdkVersion 32
-        versionCode 11
-        versionName "11.0"
+        versionCode 16
+        versionName "1.6"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {

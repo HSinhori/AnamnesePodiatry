@@ -5,11 +5,26 @@
       <map>
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.193" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/drawable/ic_pro_version.xml" value="0.2095" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/drawable/ic_profile.xml" value="0.2095" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/drawable/save.xml" value="0.2095" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout-sw600dp/client_images_dialog.xml" value="0.17265625" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout-sw600dp/client_images_grid.xml" value="0.17265625" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout-sw600dp/client_images_list.xml" value="0.17265625" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout-sw600dp/fragment_customer_profile.xml" value="0.17265625" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout-sw600dp/listview_clients_list.xml" value="0.17265625" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/activity_ads_removal.xml" value="0.42916666666666664" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/activity_back_up.xml" value="0.33" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/activity_main.xml" value="0.42916666666666664" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/activity_splash_screen.xml" value="0.42916666666666664" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/client_images_dialog.xml" value="0.23020833333333332" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/client_images_grid.xml" value="0.23020833333333332" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/client_images_list.xml" value="0.23020833333333332" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/fragment_ads_removal.xml" value="0.42916666666666664" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/fragment_customer_profile.xml" value="0.23020833333333332" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/fragment_pro_version.xml" value="0.42916666666666664" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/layout_product_adapter.xml" value="0.42916666666666664" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/listview_clients_list.xml" value="0.23020833333333332" />
+        <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/layout/nav_header_main.xml" value="0.23020833333333332" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/menu/activity_main_drawer.xml" value="0.42916666666666664" />
         <entry key="..\:/MegaSync/Projetos/Android/JAVA/Ficha de Anamnese/AnamnesePodiatry/app/src/main/res/menu/main.xml" value="0.33" />
       </map>

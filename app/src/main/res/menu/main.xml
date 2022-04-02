@@ -14,10 +14,10 @@
         android:icon="@drawable/ic_pro_version"
         app:showAsAction="ifRoom"/>
 
-    <item
+    <!--<item
         android:id="@+id/backup"
         android:title="@string/save_backup"
         android:icon="@drawable/save"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>-->
 
 </menu>

@@ -89,7 +89,7 @@
     <string name="access_patient">Accès</string>
     <string name="delete_img">Voulez-vous supprimer cette image?</string>
     <string name="delete_image">Supprimer l\'image</string>
-    <string name="txt_dev_name">Développé par HeEd</string>
+    <string name="txt_dev_name">Développé par @henrique_sinhori</string>
     <string name="not_forget_save">N\'oubliez pas de cliquer à nouveau pour enregistrer.</string>
     <string name="hand_left">La gauche</string>
     <string name="hand_right">Doitre</string>
@@ -138,4 +138,6 @@
     <string name="cancelled_purchase">Achat annulé</string>
     <string name="thx_subs">Merci de vous être abonné, vous m\'aidez donc et désactivez les publicités.</string>
     <string name="remove_ads_message">Abonnement mensuel, en plus de supprimer les publicités vous allez m\'aider.</string>
+    <string name="see_ads_removal">Vous pouvez maintenant supprimer les publicités en cliquant sur le bouton \"AD\" dans le coin supérieur droit de l\'application.</string>
+    <string name="restore_backup">ripristinare il backup</string>
 </resources>

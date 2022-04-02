@@ -107,9 +107,14 @@ public class ClientListFragment extends Fragment {
             }
         });
 
+
         AdView adView = (AdView) view.findViewById(R.id.adViewClientList);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+
+        if(getSubscribe()) {
+            adView.setVisibility(View.GONE);
+        }
 
 
         InterstitialAd.load(requireContext(), "ca-app-pub-5981899111891359/1436280145", adRequest,
@@ -147,11 +152,9 @@ public class ClientListFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(mInterstitialAd != null) {
+                if(mInterstitialAd != null && !getSubscribe()) {
 
-                    if(!getSubscribe()) {
-                        mInterstitialAd.show(requireActivity());
-                    }
+                    mInterstitialAd.show(requireActivity());
 
                 }
 
@@ -209,7 +212,7 @@ public class ClientListFragment extends Fragment {
 
                     }else{
 
-                        image.setImageDrawable(getResources().getDrawable(R.drawable.profile));
+                        image.setImageDrawable(getResources().getDrawable(R.drawable.ic_profile));
 
                     }
 
@@ -241,11 +244,9 @@ public class ClientListFragment extends Fragment {
                                         }
                                     }, 500);
 
-                                    if(mInterstitialAd_details != null) {
+                                    if(mInterstitialAd_details != null && !getSubscribe()) {
 
-                                        if(!getSubscribe()) {
-                                            mInterstitialAd_details.show(requireActivity());
-                                        }
+                                        mInterstitialAd_details.show(requireActivity());
                                     }
 
                                     fragmentManager.beginTransaction().replace(R.id.content_fragment, new ClientDetails()).commit();

@@ -89,7 +89,7 @@
     <string name="access_patient">Accesso</string>
     <string name="delete_img">Vuoi eliminare questa immagine?</string>
     <string name="delete_image">Elimina immagine</string>
-    <string name="txt_dev_name">Sviluppato da HeEd</string>
+    <string name="txt_dev_name">Sviluppato da @henrique_sinhori</string>
     <string name="not_forget_save">Non dimenticare di fare nuovamente clic per salvare.</string>
     <string name="hand_right">Destra</string>
     <string name="hand_left">Sinistra</string>
@@ -138,4 +138,6 @@
     <string name="cancelled_purchase">Acquisto annullato</string>
     <string name="thx_subs">Grazie per esserti iscritto, quindi mi stai aiutando e disabilitando gli annunci.</string>
     <string name="remove_ads_message">Abbonamento mensile, oltre a rimuovere le pubblicità mi aiuterai.</string>
+    <string name="see_ads_removal">Ora puoi rimuovere gli annunci facendo clic sul pulsante \"ANNUNCIO\" nell\'angolo in alto a destra dell\'app.</string>
+    <string name="restore_backup">Ripristinare il backup</string>
 </resources>

@@ -189,10 +189,10 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-            Intent telaPrincipal = new Intent(SplashScreen.this, MainActivity.class);
-            startActivity(telaPrincipal);
+                Intent telaPrincipal = new Intent(SplashScreen.this, MainActivity.class);
+                startActivity(telaPrincipal);
 
-            finish();
+                finish();
 
             }
         }, SPLASH_TIME_OUT);
@@ -282,29 +282,21 @@ public class SplashScreen extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
+        if (requestCode == APP_PERMISSIONS_REQUEST) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-            case APP_PERMISSIONS_REQUEST: {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
 
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-
-                        apresentarTelaSplash();
-
-                    }
-
-                } else {
-
-                    //UtilAnamnesePodiatry.showMensagem(this, getResources().getString(R.string.some_permissions));
                     apresentarTelaSplash();
 
                 }
 
-                break;
+            } else {
+
+                //UtilAnamnesePodiatry.showMensagem(this, getResources().getString(R.string.some_permissions));
+                apresentarTelaSplash();
 
             }
-
         }
 
     }

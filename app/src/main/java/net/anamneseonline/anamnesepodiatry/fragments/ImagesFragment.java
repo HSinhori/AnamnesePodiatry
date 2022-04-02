@@ -3,6 +3,8 @@ package net.anamneseonline.anamnesepodiatry.fragments;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +14,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.core.content.FileProvider;
@@ -299,21 +302,37 @@ public class ImagesFragment extends Fragment {
     private void openCamera(){
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(intent.resolveActivity(getContext().getPackageManager()) != null){
 
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+
+            photoURI = getActivity().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+            startActivityForResult(intent, CAMERA_REQUEST);
+
+        }else {
+
+            if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+
+                }
+                if (photoFile != null) {
+                    photoURI = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".fileprovider", photoFile);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    startActivityForResult(intent, CAMERA_REQUEST);
+                }
+
 
             }
-            if (photoFile != null) {
-                photoURI = FileProvider.getUriForFile(getContext(),getContext().getPackageName() + ".fileprovider", photoFile);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(intent, CAMERA_REQUEST);
-            }
-
-
         }
 
     }
@@ -378,6 +397,9 @@ public class ImagesFragment extends Fragment {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        if(!storageDir.exists()){
+            storageDir.mkdirs();
+        }
         File image = File.createTempFile(imageFileName,".jpg", storageDir);
 
         currentPhotoPath = image.getAbsolutePath();

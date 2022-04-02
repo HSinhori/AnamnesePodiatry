@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/profile"
+        app:srcCompat="@drawable/ic_profile"
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="58dp" />
 

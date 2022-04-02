@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     Context context;
     TextView username_drawer;
 
+    private int savedAdsNews = 0;
     private int savedRateUs = 0;
     public static int notifyChk = 0;
 
@@ -76,14 +77,19 @@ public class MainActivity extends AppCompatActivity
         builder = new AlertDialog.Builder(this);
 
         readRateUs();
+        readAdsNews();
         notifyRead();
-
 
         if(savedRateUs == 10 || savedRateUs == 30 || savedRateUs == 50) {
             rateUs();
         }
 
+        if(savedAdsNews == 0 || savedAdsNews == 4) {
+            adsNews();
+        }
+
         saveRateUs();
+        saveAdsNews();
 
     }
 
@@ -156,7 +162,12 @@ public class MainActivity extends AppCompatActivity
             Intent telaPrincipal = new Intent(MainActivity.this, AdsRemovalActivity.class);
             startActivity(telaPrincipal);
 
-        }
+        }/*else if(item.getItemId() == R.id.backup){
+
+            Intent telaPrincipal = new Intent(MainActivity.this, BackUpActivity.class);
+            startActivity(telaPrincipal);
+
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -199,10 +210,6 @@ public class MainActivity extends AppCompatActivity
                 e.toString();
 
             }
-
-        } else if (id == R.id.backup) {
-
-            //fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdsRemoval()).commit();
 
         } else if (id == R.id.nav_logout) {
 
@@ -308,6 +315,56 @@ public class MainActivity extends AppCompatActivity
 
         notifyChk = notifyChkr.getInt("notifyChk", 0);
 
+    }
+
+    private void saveAdsNews(){
+
+        SharedPreferences saveAdsNews = this.getSharedPreferences("saveAdsNews", 0);
+
+        SharedPreferences.Editor adsNews = saveAdsNews.edit();
+
+        savedAdsNews = savedAdsNews + 1;
+
+        adsNews.putInt("saveAdsNews", savedAdsNews);
+
+        adsNews.commit();
+
+    }
+
+    private void readAdsNews(){
+
+        SharedPreferences adsNews = this.getSharedPreferences("saveAdsNews", 0);
+
+        savedAdsNews = adsNews.getInt("saveAdsNews", 0);
+
+    }
+
+    private void adsNews(){
+
+        try {
+
+            builder.setTitle(getString(R.string.ads_removal));
+            builder.setMessage(getString(R.string.see_ads_removal));
+            builder.setCancelable(true);
+            builder.setIcon(R.mipmap.ic_launcher);
+
+            builder.setPositiveButton(R.string.close, new Dialog.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    dialog.cancel();
+
+                }
+            });
+
+            alert = builder.create();
+            alert.show();
+
+        }catch (Exception e){
+
+            e.getMessage();
+        }
     }
 
 }

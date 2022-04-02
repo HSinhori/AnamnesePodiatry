@@ -6,8 +6,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -35,8 +37,8 @@ import java.util.List;
 
 public class AdsRemovalActivity extends AppCompatActivity {
 
-    BillingClient billingClient;
-    PurchasesUpdatedListener purchasesUpdatedListener;
+    private BillingClient billingClient;
+    private PurchasesUpdatedListener purchasesUpdatedListener;
 
     private static final String PREF_FILE= "MyPref";
     private static final String SUBSCRIBE_KEY= "subscribe";
@@ -47,6 +49,8 @@ public class AdsRemovalActivity extends AppCompatActivity {
 
     private Boolean savedSubscribe = false;
 
+    Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,18 +59,31 @@ public class AdsRemovalActivity extends AppCompatActivity {
         btn_remove_ads = findViewById(R.id.btn_remove_ads);
         item_status = findViewById(R.id.item_status);
 
-        btn_remove_ads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        context = getApplicationContext();
 
-                startBillingConnection();
-
-            }
-        });
-
-        checkAdsRemoval();
+        Log.d("hsinho", "inicio");
 
         startAdsBilling();
+
+        if(getSubscribe()){
+            btn_remove_ads.setVisibility(View.GONE);
+            item_status.setText(getString(R.string.thx_subs));
+        }else{
+            btn_remove_ads.setVisibility(View.VISIBLE);
+            item_status.setText(getString(R.string.remove_ads_message));
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(getSubscribe()){
+            btn_remove_ads.setVisibility(View.GONE);
+            item_status.setText(getString(R.string.thx_subs));
+        }else{
+            btn_remove_ads.setVisibility(View.VISIBLE);
+            item_status.setText(getString(R.string.remove_ads_message));
+        }
     }
 
     private void startAdsBilling() {
@@ -105,6 +122,36 @@ public class AdsRemovalActivity extends AppCompatActivity {
             public void onBillingSetupFinished(@NonNull BillingResult billingResult) {
                 if(billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK){
 
+                    List<String> skuList = new ArrayList<>();
+                    skuList.add(ITEM_SKU_SUBSCRIBE_MONTHLY);
+                    SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
+                    params.setSkusList(skuList).setType(BillingClient.SkuType.SUBS);
+                    billingClient.querySkuDetailsAsync(params.build(),
+                            new SkuDetailsResponseListener() {
+                                @Override
+                                public void onSkuDetailsResponse(
+                                        @NonNull BillingResult billingResult,
+                                        @Nullable List<SkuDetails> list) {
+                                    if(list != null && billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK){
+
+                                        for(SkuDetails skuDetails : list){
+
+                                            String sku = skuDetails.getSku();
+
+                                            BillingFlowParams billingFlowParams = BillingFlowParams.newBuilder()
+                                                    .setSkuDetails(skuDetails)
+                                                    .build();
+
+                                            if(ITEM_SKU_SUBSCRIBE_MONTHLY.equals(sku)) {
+                                                startBillingConnection(billingFlowParams);
+                                            }
+                                        }
+
+                                    }
+
+                                }
+                            });
+
                     Purchase.PurchasesResult queryPurchase = billingClient.queryPurchases(SUBS);
                     List<Purchase> queryPurchases = queryPurchase.getPurchasesList();
                     if(queryPurchases!=null && queryPurchases.size()>0){
@@ -120,38 +167,16 @@ public class AdsRemovalActivity extends AppCompatActivity {
 
     }
 
-    private void checkAdsRemoval() {
+    private void startBillingConnection(BillingFlowParams billingFlowParams){
 
-        if(getSubscribe()){
-            btn_remove_ads.setVisibility(View.GONE);
-            item_status.setText(getString(R.string.thx_subs));
-        }else{
-            btn_remove_ads.setVisibility(View.VISIBLE);
-            item_status.setText(getString(R.string.remove_ads_message));
-        }
+        btn_remove_ads.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+                billingClient.launchBillingFlow(AdsRemovalActivity.this, billingFlowParams);
 
-    private void startBillingConnection(){
-
-        List<String> skuList = new ArrayList<>();
-        skuList.add(ITEM_SKU_SUBSCRIBE_MONTHLY);
-        SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
-        params.setSkusList(skuList).setType(BillingClient.SkuType.SUBS);
-        billingClient.querySkuDetailsAsync(params.build(),
-                new SkuDetailsResponseListener() {
-                    @Override
-                    public void onSkuDetailsResponse(
-                            @NonNull BillingResult billingResult,
-                            @Nullable List<SkuDetails> list) {
-
-                        BillingFlowParams billingFlowParams = BillingFlowParams.newBuilder()
-                                .setSkuDetails(list.get(0))
-                                .build();
-                        billingClient.launchBillingFlow(AdsRemovalActivity.this, billingFlowParams);
-
-                    }
-                });
+            }
+        });
 
     }
 
@@ -165,6 +190,7 @@ public class AdsRemovalActivity extends AppCompatActivity {
                     //if purchase is acknowledged
                     // Grant entitlement to the user. and restart activity
                     saveSubscribe(true);
+                    recreate();
                 }
 
             }
@@ -196,6 +222,7 @@ public class AdsRemovalActivity extends AppCompatActivity {
         };
 
         billingClient.consumeAsync(consumeParams, listener);
+        finish();
 
     }
 
@@ -221,12 +248,6 @@ public class AdsRemovalActivity extends AppCompatActivity {
         subscribe.putBoolean(SUBSCRIBE_KEY, save);
 
         subscribe.apply();
-
-        if(save){
-            UtilAnamnesePodiatry.showMensagem(this, getString(R.string.remove_ads_message));
-        }else{
-            UtilAnamnesePodiatry.showMensagem(this, getString(R.string.app_name));
-        }
 
     }
 

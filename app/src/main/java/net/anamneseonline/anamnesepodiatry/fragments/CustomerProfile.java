@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,6 +19,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -32,11 +34,13 @@ import android.provider.MediaStore;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import net.anamneseonline.anamnesepodiatry.R;
@@ -83,6 +87,8 @@ public class CustomerProfile extends Fragment {
     private Uri photoURI;
     private float rotation = 0.0f;
 
+    private TextView txt_customer_profile_pdf_saved;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +114,8 @@ public class CustomerProfile extends Fragment {
         edit_customer_profession = view.findViewById(R.id.edit_customer_profession);
         turn_costumer = view.findViewById(R.id.turn_costumer);
         fabPdf = view.findViewById(R.id.fabPdf);
+
+        txt_customer_profile_pdf_saved = view.findViewById(R.id.txt_customer_profile_pdf_saved);
 
         img_pacient_profile = (CircularImageView) view.findViewById(R.id.img_pacient_profile);
 
@@ -340,22 +348,37 @@ public class CustomerProfile extends Fragment {
     private void openCamera(){
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(intent.resolveActivity(getContext().getPackageManager()) != null){
 
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+
+            photoURI = getActivity().getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
+
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+            startActivityForResult(intent, CAMERA_REQUEST);
+
+        }else {
+
+            if (intent.resolveActivity(getContext().getPackageManager()) != null) {
+
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+
+                }
+                if (photoFile != null) {
+                    photoURI = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".fileprovider", photoFile);
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    startActivityForResult(intent, CAMERA_REQUEST);
+                }
+
 
             }
-
-            if (photoFile != null) {
-                photoURI = FileProvider.getUriForFile(getContext(), getContext().getPackageName() + ".fileprovider", photoFile);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(intent, CAMERA_REQUEST);
-            }
-
-
         }
 
     }
@@ -391,6 +414,9 @@ public class CustomerProfile extends Fragment {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        if(!storageDir.exists()){
+            storageDir.mkdirs();
+        }
         File image = File.createTempFile(imageFileName,".jpg", storageDir);
 
         currentPhotoPath = image.getAbsolutePath();
@@ -746,24 +772,22 @@ public class CustomerProfile extends Fragment {
 
                 }
 
-                if(anamnesePodiatry.getNailshape() != 0){
-                    if(anamnesePodiatry.getNailshape() == 2131296609){
-                        pdfNailShape = getString(R.string.dedo_caracol);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296610){
-                        pdfNailShape = getString(R.string.dedo_cunha);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296611){
-                        pdfNailShape = getString(R.string.dedo_funil);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296612){
-                        pdfNailShape = getString(R.string.dedo_gancho);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296613){
-                        pdfNailShape = getString(R.string.dedo_incorreto);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296614){
-                        pdfNailShape = getString(R.string.dedo_involuta);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296615){
-                        pdfNailShape = getString(R.string.dedo_normal);
-                    }else if(anamnesePodiatry.getNailshape() == 2131296616){
-                        pdfNailShape = getString(R.string.dedo_telha);
-                    }
+                if(anamnesePodiatry.getNailshape() <= 0 || anamnesePodiatry.getNailshape() > 7) {
+                    pdfNailShape = getString(R.string.dedo_normal);
+                }else if(anamnesePodiatry.getNailshape() == 1){
+                    pdfNailShape = getString(R.string.dedo_incorreto);
+                }else if(anamnesePodiatry.getNailshape() == 2){
+                    pdfNailShape = getString(R.string.dedo_involuta);
+                }else if(anamnesePodiatry.getNailshape() == 3){
+                    pdfNailShape = getString(R.string.dedo_telha);
+                }else if(anamnesePodiatry.getNailshape() == 4) {
+                    pdfNailShape = getString(R.string.dedo_funil);
+                }else if(anamnesePodiatry.getNailshape() == 5){
+                    pdfNailShape = getString(R.string.dedo_caracol);
+                }else if(anamnesePodiatry.getNailshape() == 6){
+                    pdfNailShape = getString(R.string.dedo_cunha);
+                }else if(anamnesePodiatry.getNailshape() == 7) {
+                    pdfNailShape = getString(R.string.dedo_gancho);
                 }
 
                 if (anamnesePodiatry.getCyanotic() == 1) {
@@ -1151,27 +1175,32 @@ public class CustomerProfile extends Fragment {
 
             //////GERAR PDF ABAIXO
 
-            File file = new File(Objects.requireNonNull(getActivity())
-                    .getExternalFilesDir("/"), pdfName + ".pdf");
+            File file = new File(requireActivity()
+                    .getExternalFilesDir("/"), "patient_" + pdfName + ".pdf");
             try {
                 pdfDocument.writeTo(new FileOutputStream(file));
             } catch (IOException e) {
                 e.printStackTrace();
             }
             pdfDocument.close();
-            Intent i = new Intent(Intent.ACTION_VIEW);
+            Intent i = new Intent(Intent.ACTION_SEND);
             i.setDataAndType(Uri.fromFile(file), "application/pdf");
             i.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            Intent intent = Intent.createChooser(i, getString(R.string.open_pdf));
+            txt_customer_profile_pdf_saved.setText("PDF saved in: " + file);
+
+            //Intent intent = Intent.createChooser(i, getString(R.string.open_pdf));
             try{
-                startActivity(intent);
+                startActivity(Intent.createChooser(i, getString(R.string.open_pdf)));
             }catch (ActivityNotFoundException e){
                 e.printStackTrace();
+                Log.d("pdf", e.getMessage());
             }
 
         }catch (Exception e){
             e.printStackTrace();
+            Log.d("pdf", e.getMessage());
         }
 
     }
